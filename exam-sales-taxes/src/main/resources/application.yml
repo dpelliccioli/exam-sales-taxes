@@ -1,0 +1,4 @@
+#spring.profiles.active: file
+product.exclusion.list: book, food ,medical, chocolate, chocolate bar, pills
+product.sales.tax: 0.10
+product.import.tax: 0.05
