@@ -42,7 +42,7 @@ public class ReceiptService implements IReceiptService{
 			receipt = Receipt.builder().items(receiptItems)
 					.amount(receiptItems.stream()
 							.map(item -> item.getAmount() != null ? item.getAmount() : BigDecimal.ZERO)
-							.reduce((x, y) -> x.add(y)).get())
+							.reduce((x, y) -> x.add(y)).orElse(BigDecimal.ZERO))
 					.build();
 
 		}

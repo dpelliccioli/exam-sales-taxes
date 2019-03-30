@@ -3,6 +3,7 @@
  */
 package it.dpelliccioli.exam.sales.taxes.parser;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -31,6 +32,7 @@ public class FileInputProvider implements InputProvider {
 
 	/**
 	 * {@inheritDoc}
+	 * 
 	 * @see it.dpelliccioli.exam.sales.taxes.parser.InputProvider#createInput(java.lang.
 	 *      String[])
 	 */
@@ -42,12 +44,12 @@ public class FileInputProvider implements InputProvider {
 		if (args != null && args.length > NumberUtils.INTEGER_ZERO) {
 			path = args[NumberUtils.INTEGER_ZERO];
 		}
-		try {
-			input = Files.newBufferedReader(ResourceUtils.getFile(path).toPath()).lines()
-					.collect(Collectors.toList());
+
+		try (BufferedReader reader = Files.newBufferedReader(ResourceUtils.getFile(path).toPath())) {
+			input = reader.lines().collect(Collectors.toList());
 		} catch (IOException e) {
-			if(log.isErrorEnabled()) {
-				log.error("Error during file("+path+") loading", e);
+			if (log.isErrorEnabled()) {
+				log.error("Error during file(" + path + ") loading", e);
 			}
 		}
 

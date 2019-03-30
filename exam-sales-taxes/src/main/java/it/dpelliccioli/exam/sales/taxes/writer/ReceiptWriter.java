@@ -24,29 +24,29 @@ public class ReceiptWriter implements IReceiptWriter {
 		String ret = StringUtils.EMPTY;
 
 		if (receipt != null) {
-			StringBuffer stringBuffer = new StringBuffer("\n\r");
-			stringBuffer.append("======= RECEIPT ======= \n\r");
+			StringBuilder stringBuilder = new StringBuilder("\n\r");
+			stringBuilder.append("======= RECEIPT ======= \n\r");
 			
 			if (receipt.getItems() != null && !receipt.getItems().isEmpty()) {
 				receipt.getItems().forEach(x -> {
-					stringBuffer.append(x.getQuantity());
-					stringBuffer.append(" ");
+					stringBuilder.append(x.getQuantity());
+					stringBuilder.append(" ");
 					if (x.isImported()) {
-						stringBuffer.append("imported ");
+						stringBuilder.append("imported ");
 					}
-					stringBuffer.append(x.getDescription());
-					stringBuffer.append(": ");
-					stringBuffer.append(x.getAmount());
-					stringBuffer.append("\n\r");
+					stringBuilder.append(x.getDescription());
+					stringBuilder.append(": ");
+					stringBuilder.append(x.getAmount());
+					stringBuilder.append("\n\r");
 				});
 			}
 
-			stringBuffer.append("\n\r");
-			stringBuffer.append("Total (taxes included): ");
-			stringBuffer.append(receipt.getAmount());
-			stringBuffer.append("\n\r======================= \n\r");
+			stringBuilder.append("\n\r");
+			stringBuilder.append("Total (taxes included): ");
+			stringBuilder.append(receipt.getAmount());
+			stringBuilder.append("\n\r======================= \n\r");
 
-			ret = stringBuffer.toString();
+			ret = stringBuilder.toString();
 		}
 		return ret;
 
