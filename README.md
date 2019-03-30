@@ -1,3 +1,5 @@
+### SALES TAXES
+
 Basic sales tax is applicable at a rate of 10% on all goods, except books, food,
 and medical products that are exempt. Import duty is an additional sales tax
 applicable on all imported goods at a rate of 5%, with no exemptions.
@@ -11,10 +13,10 @@ Write an application that prints out the receipt details for these shopping bask
 INPUT:
 
 Input 1:
-1 book at 12.49
-1 music CD at 14.99
-1 chocolate at 0.85
+* 1 book at 12.49
+* 1 music CD at 14.99
+* 1 chocolate at 0.85
 
 Input 2:
-2 imported chocolate at 10.00
-1 imported bottle of perfume at 47.50
+* 2 imported chocolate at 10.00
+* 1 imported bottle of perfume at 47.50
