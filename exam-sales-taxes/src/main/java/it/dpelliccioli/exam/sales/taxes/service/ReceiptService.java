@@ -1,6 +1,3 @@
-/**
- * 
- */
 package it.dpelliccioli.exam.sales.taxes.service;
 
 import java.math.BigDecimal;
@@ -16,15 +13,20 @@ import it.dpelliccioli.exam.sales.taxes.model.Receipt;
 import it.dpelliccioli.exam.sales.taxes.model.ReceiptItem;
 
 /**
+ * Compute receipt with orders and tax data
+ * 
  * @author dpelliccioli
  *
  */
 @Service
-public class ReceiptService {
+public class ReceiptService implements IReceiptService{
 
 	@Autowired
 	private ITaxCalculator taxCalculator;
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public Receipt computeReceipt(List<CartItem> items) {
 
 		Receipt receipt = null;
@@ -48,6 +50,12 @@ public class ReceiptService {
 		return receipt;
 	}
 
+	/**
+	 * Update product price with taxes
+	 * 
+	 * @param product - The product on which calculate taxes
+	 * @return The updated price with taxes
+	 */
 	private BigDecimal computeAmount(Product product) {
 		BigDecimal tax = BigDecimal.ZERO;
 

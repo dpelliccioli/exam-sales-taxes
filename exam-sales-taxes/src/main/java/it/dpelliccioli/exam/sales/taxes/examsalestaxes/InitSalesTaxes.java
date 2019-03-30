@@ -11,7 +11,7 @@ import it.dpelliccioli.exam.sales.taxes.model.CartItem;
 import it.dpelliccioli.exam.sales.taxes.model.Receipt;
 import it.dpelliccioli.exam.sales.taxes.parser.ISalesTaxParser;
 import it.dpelliccioli.exam.sales.taxes.parser.InputProvider;
-import it.dpelliccioli.exam.sales.taxes.service.ReceiptService;
+import it.dpelliccioli.exam.sales.taxes.service.IReceiptService;
 import it.dpelliccioli.exam.sales.taxes.writer.IReceiptWriter;
 import lombok.extern.slf4j.Slf4j;
 /**
@@ -30,7 +30,7 @@ public class InitSalesTaxes implements CommandLineRunner{
 	InputProvider inputProvider;
 	
 	@Autowired
-	private ReceiptService receiptService;
+	private IReceiptService receiptService;
 	
 	@Autowired
 	private ISalesTaxParser inputParser;
