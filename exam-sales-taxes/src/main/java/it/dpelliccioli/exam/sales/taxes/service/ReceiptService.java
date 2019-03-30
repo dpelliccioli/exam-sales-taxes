@@ -4,9 +4,7 @@
 package it.dpelliccioli.exam.sales.taxes.service;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +19,6 @@ import it.dpelliccioli.exam.sales.taxes.model.ReceiptItem;
  * @author dpelliccioli
  *
  */
-
 @Service
 public class ReceiptService {
 

@@ -1,4 +1,10 @@
 #spring.profiles.active: file
+
+#list of product excluded from tax
 product.exclusion.list: book, food ,medical, chocolate, chocolate bar, pills
+#product taxes
 product.sales.tax: 0.10
 product.import.tax: 0.05
+
+#for the input file provider is possible specify path to input file (default: classpath:input\input1)
+#input.file.path: classpath:input\input2

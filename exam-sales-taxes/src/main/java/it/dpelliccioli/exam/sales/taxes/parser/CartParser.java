@@ -16,6 +16,11 @@ import it.dpelliccioli.exam.sales.taxes.model.CartItem;
 import it.dpelliccioli.exam.sales.taxes.model.Product;
 
 /**
+ * Parse a list of string in the specified format '[quantity] [imported(optional)] [description] at [price]'
+ * into a CartItem object of the domain model
+ * 
+ * Example of parsed string: '1 book at 12.49'
+ * 
  * @author dpelliccioli
  *
  */
@@ -28,12 +33,9 @@ public class CartParser implements ISalesTaxParser {
 	private static final Integer GROUP_DESC = 3;
 	private static final Integer GROUP_AMOUNT = 5;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * it.dpelliccioli.exam.sales.taxes.parser.ISalesTaxParser#parseSales(java.lang.
-	 * String)
+	/**
+	 * {@inheritDoc}
+	 * @see it.dpelliccioli.exam.sales.taxes.parser.ISalesTaxParser#parseSales(java.util.List)
 	 */
 	@Override
 	public List<CartItem> parseSales(List<String> input) {
