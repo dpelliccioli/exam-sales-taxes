@@ -15,7 +15,7 @@ public class RoundUtils {
 	private RoundUtils() {
 	}
 
-	public static final BigDecimal FIVE_CENT = new BigDecimal(0.05);
+	public static final BigDecimal FIVE_CENT = new BigDecimal("0.05");
 
 	/**
 	 * Round input number by the fraction 
@@ -29,7 +29,7 @@ public class RoundUtils {
 		if (num == null || fraction == null) {
 			return num;
 		}
-		return num.divide(fraction, 0, RoundingMode.UP).multiply(fraction).setScale(2, RoundingMode.HALF_UP);
+		return num.divide(fraction, 0, RoundingMode.HALF_UP).multiply(fraction).setScale(2, RoundingMode.HALF_UP);
 	}
 
 	/**

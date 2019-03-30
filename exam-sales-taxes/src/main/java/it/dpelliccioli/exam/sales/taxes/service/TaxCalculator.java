@@ -19,7 +19,7 @@ import it.dpelliccioli.exam.sales.taxes.util.RoundUtils;
 @Service
 public class TaxCalculator implements ITaxCalculator {
 
-	@Value("${product.exclusion.list}")
+	@Value("${product.exclusion.list:#{T(java.util.Collections).emptyList()}}")
 	private List<String> exclusions;
 
 	@Value("${product.sales.tax:0.10}")

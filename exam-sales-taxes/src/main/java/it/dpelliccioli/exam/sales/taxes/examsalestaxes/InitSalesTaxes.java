@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @SpringBootApplication
-@ComponentScan("it.dpelliccioli.*")
+@ComponentScan("it.dpelliccioli")
 public class InitSalesTaxes implements CommandLineRunner{
 
 	
